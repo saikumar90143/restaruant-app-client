@@ -35,6 +35,18 @@ useEffect(()=>{
   dispatch(getTotal())
 },[cart])
  
+
+// handleconform
+
+const handleConform=(item)=>{
+  let text="Do you want to remove item, Press Ok"
+  if(window.confirm(text)===true){
+   text="order conformed"
+    dispatch(DeleteItem(item))
+  }else{
+    text="order cancelled"
+  }
+}
   return (
     <Wrapper>
       <section className="h-100 gradient-custom open">
@@ -102,8 +114,8 @@ useEffect(()=>{
                     
 
                    
-                        <MDBBtn onClick={()=>dispatch(DeleteItem(item?._id))}>
-                      <MDBIcon fas icon="trash"  />
+                        <MDBBtn onClick={()=>handleConform(item?._id)}>
+                      <MDBIcon fas icon="trash"   />
                           
                         </MDBBtn>
                     
@@ -141,7 +153,7 @@ useEffect(()=>{
                 <p>
                   <strong>Expected shipping delivery</strong>
                 </p>
-                <p className="mb-0">12.10.2020 - 14.10.2020</p>
+                <p className="mb-0">12.10.2021 - 14.10.2021</p>
               </MDBCardBody>
             </MDBCard>
 
@@ -202,7 +214,7 @@ useEffect(()=>{
                       </strong>
                     </div>
                     <span>
-                      <strong>{`${TotalAmount+shippingFee}`}</strong>
+                      <strong>{cart.length>=1?`${TotalAmount+shippingFee}`:0}</strong>
                     </span>
                   </MDBListGroupItem>
                 </MDBListGroup>

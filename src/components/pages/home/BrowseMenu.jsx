@@ -104,7 +104,8 @@ const BrowseMenu = () => {
                             max={10}
                             min={1}
                             style={{ width: "60px" }}
-                            defaultValue={1}
+                            defaultValue={0}
+                            placeholder="0"
                           />
                         </div>
                         <div>

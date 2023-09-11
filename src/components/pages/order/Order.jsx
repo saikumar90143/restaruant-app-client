@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../Loader";
 
 import { Link } from "react-router-dom";
-import { setCart, setQuantity } from "../../redux/CartSlice";
+import { setCart} from "../../redux/CartSlice";
 const Order = () => {
   const dispatch = useDispatch();
 

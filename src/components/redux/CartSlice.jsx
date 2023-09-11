@@ -16,6 +16,7 @@ const CartSlice = createSlice({
     setCart:(state,action)=>{
      
       const itemIndex=state.cart.findIndex((item)=>item._id===action.payload._id)
+      console.log('itemIndex: ', itemIndex);
       if(itemIndex>=0){
         state.cart[itemIndex].cartQunatity+=1
         localStorage.setItem("cart",JSON.stringify(state.cart))
